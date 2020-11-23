@@ -1,8 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
-
+require('dotenv').config(); // <- 追加
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
+  // ssr: false,
+  mode: 'spa',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -24,6 +25,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    "@/plugins/vuetify", //追加
+
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -33,6 +36,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
