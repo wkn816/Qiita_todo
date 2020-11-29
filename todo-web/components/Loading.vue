@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     loading() {
-      return this.$store.state.loading;　//storeから読み込む
+      return this.$store.state.loading;
     }
   }
 };

@@ -17,15 +17,20 @@ export default {
   data() {
     return {
       title: ""
-    };  //初期値
+    };
+  },
+  computed: {
+    user() {
+      return this.$store.state.currentUser;
+    }
   },
   methods: {
     handleSubmit() {
       const todo = {
         title: this.title,
-        user_id: this.user.id,
+        user_id: this.user.id
       };
-      this.$emit("submit", todo); 
+      this.$emit("submit", todo);
       this.title = "";
     }
   }

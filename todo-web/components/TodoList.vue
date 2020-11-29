@@ -3,7 +3,7 @@
     <v-card-title>
       Todo List
       <v-spacer></v-spacer>
-      <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
+      <v-text-field v-model="search" label="Search" single-line hide-details></v-text-field>
     </v-card-title>
     <v-data-table :headers="headers" :items="todos" :search="search">
       <template v-slot:item.action="{ item }">
@@ -16,7 +16,7 @@
 <script>
 import axios from "@/plugins/axios";
 export default {
-  props: ["todos"],
+  props: ["todos"], // <- これ！
   data() {
     return {
       singleSelect: true,
