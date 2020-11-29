@@ -29,9 +29,12 @@ export default {
     };
   },
   methods: {
-    addTodo(title) {
-      this.todos.push({
-        title
+    async addTodo(todo) {
+      const { data } = await axios.post("/v1/todos", { todo });
+      //追加
+      this.$store.commit("setUser", {
+        ...this.user,
+        todos: [...this.user.todos, data] 
       });
     }
   }
