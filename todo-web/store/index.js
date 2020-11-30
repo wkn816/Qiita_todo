@@ -6,17 +6,24 @@ Vue.use(Vuex)
 const store = () => {
     return new Vuex.Store({
         state: {
-            loading: false, // 追加
-            currentUser: null,
-        },
+            currentUser: {}, 
+            loading: false,
+            notification: {  
+                status: false,
+                message: ""
+            }
+          },
         mutations: {
             setUser(state, payload) {
                 state.currentUser = payload
             },
             setLoading(state, payload) {
-                state.loading = payload 
+                state.loading = payload
+            },
+            setNotice(state, payload) {   //追加
+                state.notification = payload
             }
-        },
+          },
         actions: {
         }
     })
