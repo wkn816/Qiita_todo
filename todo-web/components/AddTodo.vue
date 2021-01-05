@@ -25,6 +25,7 @@ export default {
     }
   },
   methods: {
+
     handleSubmit() {
       const todo = {
         title: this.title,

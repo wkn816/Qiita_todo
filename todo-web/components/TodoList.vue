@@ -43,13 +43,13 @@ export default {
     async deleteItem(item) {
       const res = confirm("本当に削除しますか？");
       if (res) {
-        await axios.delete(`/v1/todos/${item.id}`);
-        const todos = this.user.todos.filter(todo => {
-          return todo.id !== item.id;
+        await axios.delete(`/v1/travels/${item.id}`);
+        const travels = this.user.travels.filter(travel => {
+          return travel.id !== item.id;
         });
         const newUser = {
           ...this.user,
-          todos
+          travels
         };
         this.$store.commit("setUser", newUser);
       }

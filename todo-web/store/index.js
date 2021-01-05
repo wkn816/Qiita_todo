@@ -6,13 +6,13 @@ Vue.use(Vuex)
 const store = () => {
     return new Vuex.Store({
         state: {
-            currentUser: {}, 
+            currentUser: {},
             loading: false,
-            notification: {  
+            notification: {
                 status: false,
                 message: ""
             }
-          },
+        },
         mutations: {
             setUser(state, payload) {
                 state.currentUser = payload
